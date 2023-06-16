@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Prices</title>
+    <style>
+        .data {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data th, .data td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Binance BTC Price</h1>
+    {% for table in tables_binance %}
+        {{ table|safe }}
+    {% endfor %}
+    <h1>Coinbase BTC Price</h1>
+    {% for table in tables_coinbase %}
+        {{ table|safe }}
+    {% endfor %}
+    <h1>Kraken BTC Price</h1>
+    {% for table in tables_kraken %}
+        {{ table|safe }}
+    {% endfor %}
+    <button onclick="location.reload();">Refresh</button>
+</body>
+</html>
